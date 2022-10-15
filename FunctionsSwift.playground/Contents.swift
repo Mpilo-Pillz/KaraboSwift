@@ -50,7 +50,8 @@ print(myTuple.myLady)
 print(myTuple.0)
 print(myTuple.1)
 
-func minMax(array: [Int]) -> (min: Int, max: Int) {
+func minMax(array: [Int]) -> (min: Int, max: Int)? {
+    if array.isEmpty {return nil}
     var currentMin = array[0]
     var currentMax = array[0]
     
@@ -65,14 +66,12 @@ func minMax(array: [Int]) -> (min: Int, max: Int) {
 }
 
 
-let bounds = minMax(array: [18, -40, 100, 20, 10, 77, 87, 35])
-print("min is \(bounds.min) and max is \(bounds.max)")
+//let bounds = minMax(array: [18, -40, 100, 20, 10, 77, 87, 35])
+//print("min is \(bounds.min) and max is \(bounds.max)")
 
-
-
-
-
-
+if let safeBounds = minMax(array: [18, -40, 100, 20, 10, 77, 87, 35]) {
+    print("min is \(safeBounds.min) and max is \(safeBounds.max)")
+}
 
 
 
