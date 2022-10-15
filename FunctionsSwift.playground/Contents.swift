@@ -188,3 +188,21 @@ print("Result: \(mathFunction(2, 3))")
  */
 mathFunction = multiplyTowInts // infering the type
 print("Result: \(mathFunction(2, 3))")
+
+/**
+ Function Types as Parameter Types
+ You can use a function type such as (Int, Int) -> Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.
+ */
+
+func multiplyFunc(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+
+func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+    print("Result \(mathFunction(a,b))")
+}
+
+printMathResult(multiplyFunc, 200000, 12)
+
+
+// Functions as return types
