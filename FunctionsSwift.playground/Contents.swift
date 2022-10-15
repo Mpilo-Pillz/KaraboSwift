@@ -1,5 +1,7 @@
 import UIKit
 
+// Define your parameters and pass in the arguments
+
 func greet(person: String) -> String {
     let greeting = "Hello, " + person + "!"
     return greeting
@@ -94,6 +96,95 @@ func dumedisa(mung motho: String) -> String {
 print(dumedisa(mung: "Hunadi"))
 
 
+// Argument Labels and Parameter names
+
+/*
+ * Each function parameter has both an argument label and a parameter name. The argument
+ * label is used when calling the function; each argument is written in the function call with its
+ * argument label before it. The parameter name is used in the implementation of the function.
+ * By default, parameters use their parameter name as their argument label.
+ */
+
+func someFunction(firstParameterName: Int, secondParameterName: Int) {
+    print("Yeah nomally logic comes here")
+}
+someFunction(firstParameterName: 1, secondParameterName: 2)
+
+func someFunction(argumentLabel parameterName: Int) {
+    print("Argument Label helps the logic read like english")
+}
+
+func greetClearly(person: String, from hometown: String) -> String {
+    return "Hello \(person)! I plan to visit \(hometown)"
+}
+
+print(greetClearly(person: "Mpilz", from: "Malkerns"))
+
+// Omitting Argument Labels
+func someUnderFunc(_ firstParameterName: Int, secondParameterName: Int) {
+    print("Logic HEre")
+}
+
+someUnderFunc(1, secondParameterName: 2)
+
+// Default Parameter Values
+func someFunc(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
+    print("If you dont pass in the second arg when calling it")
+}
+
+someFunc(parameterWithoutDefault: 3, parameterWithDefault: 6)
+someFunc(parameterWithoutDefault: 4)
 
 
+// Variadic Parameters
+func arithmeticMean(_ numbers: Double...) -> Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
 
+print(
+    arithmeticMean(1, 2, 3, 4, 5)
+)
+print(arithmeticMean(60000, 120000, 295000, 320000, 400000, 420000, 465000, 689000, 720000, 740000, 800000, 400000, 960000, 1044000))
+
+
+// In-Out Parameters
+/* Function parameters are constants by default
+ */
+
+// omitting the argument labels cos it will look cluttered ing the parenthesis
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&someInt, &anotherInt)
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+
+
+func addTwoInts(_ a: Int, _ b:Int) -> Int {
+    return a + b
+}
+
+func multiplyTowInts(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+
+var mathFunction: (Int, Int) -> Int = addTwoInts
+
+/**
+ Define a variable called mathFunction, which has a type of ‘a function that takes two Int values, and returns an Int value.’ Set this new variable to refer to the function called addTwoInts.
+ */
+print("Result: \(mathFunction(2, 3))")
+
+/**
+ A different function with the same matching type can be assigned to the same variable, in the same way as for nonfunction types:
+ */
+mathFunction = multiplyTowInts // infering the type
+print("Result: \(mathFunction(2, 3))")
