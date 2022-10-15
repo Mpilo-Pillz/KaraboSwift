@@ -214,6 +214,8 @@ func stepBackward(_ input: Int) -> Int {
     return input - 1
 }
 
+// confusing How it gets the value of Int but if you look at the return type it returns a function that takes in an int
+// Who ever calls it will provide that int in some crazy inception
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
     return backward ? stepBackward : stepForward
 }
@@ -226,9 +228,12 @@ print("Counting to zero:")
 
 while currentValue != 0 {
     print("\(currentValue)...")
+//     this is where the argument is defined drilled through ChooseStepFunction and used by either backwards or forwards
     currentValue = moveNearerToZero(currentValue)
 }
 print("zero")
+
+//  currentValue -> moveNearerToZero(currentValue) -> chooseStepFunction(true/false) [carrying the int = currentValue] -> passing it down to stepForward(currentValue) or StepBackward(currentValue)
 
 // Nested Functions
 func chooseNestedStepFunction(backward: Bool) -> (Int) -> Int {
@@ -244,5 +249,6 @@ while currentNestedValue != 0 {
     currentNestedValue = moveNearerToNestedZero(currentNestedValue)
 }
 print("Zero")
+
 
 
