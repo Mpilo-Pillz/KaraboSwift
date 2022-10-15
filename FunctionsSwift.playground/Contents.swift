@@ -41,6 +41,11 @@ func runApp() -> () {
     
     
 }
+runApp()
+
+
+
+
 
 // Multiple Return Values and Tuples
 let myTuple = (me: "Mpilo", myLady: "Thapelo")
@@ -69,13 +74,26 @@ func minMax(array: [Int]) -> (min: Int, max: Int)? {
 //let bounds = minMax(array: [18, -40, 100, 20, 10, 77, 87, 35])
 //print("min is \(bounds.min) and max is \(bounds.max)")
 
+// optional binding
 if let safeBounds = minMax(array: [18, -40, 100, 20, 10, 77, 87, 35]) {
     print("min is \(safeBounds.min) and max is \(safeBounds.max)")
 }
 
+// Implicit return
+// equivalent to const = mbingelelo(person) => "Kunjani, " + person + "!"
+func mbingelelo(for person: String) -> String {
+    "Kunjani, " + person + "!"
+}
+
+print(mbingelelo(for: "Nomthandazo"))
+
+func dumedisa(mung motho: String) -> String {
+    return "Ashe, " + motho + "!"
+}
+
+print(dumedisa(mung: "Hunadi"))
 
 
-runApp()
 
 
 
