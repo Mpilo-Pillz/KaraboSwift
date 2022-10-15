@@ -250,5 +250,10 @@ while currentNestedValue != 0 {
 }
 print("Zero")
 
-
+/**
+ currentNestedValue with number calls moveNearerToNestedZero(currentNestedValue)
+     moveNearerToNestedZero with currentNestedValue as its parameter to be an input for either backward or forward
+ calls moveNearerToNestedZero(currentNestedValue) chooseNestedStepFunction(boolean) carrying the currentNestedValue
+ chooseNestedStepFunction returns a function that takes in an interger as a parameter returning an integer
+ */
 
