@@ -52,3 +52,18 @@ firstItem = shoppingList[0] // firstItem is now equal to "Six eggs"
  If you want to remove the final item from an array, use the removeLast() method rather than the remove(at:) method to avoid the need to query the array’s count property. Like the remove(at:) method, removeLast() returns the removed item:
  */
 let apples = shoppingList.removeLast()
+
+
+//---------------------------------------------------------------------------------------------------
+// Iterating over arrays
+//---------------------------------------------------------------------------------------------------
+
+for item in shoppingList {
+    print(item)
+}
+
+// Get the index of each item
+for (index, value) in shoppingList.enumerated() {
+    print("Item \(index + 1): \(value)")
+}
+
