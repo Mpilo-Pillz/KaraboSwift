@@ -76,3 +76,21 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName
 userDefinedColorName = "green"
 colorNameToUse = userDefinedColorName ?? defaultColorName
 
+/**
+ * RANGE OPERATORS
+ */
+
+// closed range
+// a...b not less than a and includes a and not less than b but includes b
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+
+// half opennge operator
+// a..<b includes a but does not include b and has to be less than b
+let names = ["Sabelo", "Thabiso", "Neo", "Hlamarisa"]
+let count = names.count
+
+for i in 0..<count {
+    print("Person \(i + 1) is called \(names[i])")
+}
