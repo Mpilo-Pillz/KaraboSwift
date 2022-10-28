@@ -60,3 +60,19 @@ let hasHeader = true
 
 let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 
+/**
+ * Nil-Coalescing Operator
+ * The nil-coalescing operator (a ?? b) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. The expression b must match the type that’s stored inside a.
+ */
+var p: String = "ilo"
+var m: String?
+m != nil ? m! : p
+
+let defaultColorName = "systemBackground"
+var userDefinedColorName: String?
+
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+
+userDefinedColorName = "green"
+colorNameToUse = userDefinedColorName ?? defaultColorName
+
