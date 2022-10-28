@@ -50,3 +50,13 @@ if name == "world" {
 
 //("blue", false) < ("purple", true)  // Error because < can't compare Boolean values
 
+
+/**
+ * TERARY  OPERATOR
+ */
+
+let contentHeight = 40
+let hasHeader = true
+
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+
