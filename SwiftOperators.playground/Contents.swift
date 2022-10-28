@@ -94,3 +94,71 @@ let count = names.count
 for i in 0..<count {
     print("Person \(i + 1) is called \(names[i])")
 }
+
+// one sided range operator counts from a particular starting point until the end
+// useful if you want to omit the first few in a list
+
+// print from index 2
+for name in names[2...] {
+    print(name)
+}
+print("----------")
+// print before index to including index 2
+for name in names[...2] {
+    print(name)
+}
+
+print("------")
+// print every thing before index 2 excluding index 2
+for name in names[..<2] {
+    print(name)
+}
+
+let range = ...5
+range.contains(7)   // false
+range.contains(4)   // true
+range.contains(-1) // true // bcuase we did not tell it to start at 0
+
+//print(range)
+
+/**
+ * LOGICAL OPERATORS
+ */
+let allowedEntry = false
+if !allowedEntry {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED
+
+let enteredDoorCode = true
+let passedRetinaScan = false
+if enteredDoorCode && passedRetinaScan {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED"
+
+let hasDoorKey = false
+let knowsOverridePassword = true
+if hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+
+if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+
+// Explicit parenthesis
+if (enteredDoorCode && passedRetinaScan) || hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
