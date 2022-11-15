@@ -92,3 +92,75 @@ default:
 }
 print("There are \(naturalCount) \(countedThings).")
 // Prints "There are dozens of moons orbiting Saturn."
+
+
+/**
+Continue
+ */
+
+let puzzleInput = "great minds think alike"
+var puzzleOutput = ""
+let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
+
+for character in puzzleInput {
+    if charactersToRemove.contains(character) {
+        continue
+    }
+    puzzleOutput.append(character)
+}
+print("------------------------puzzleOutput-------------------")
+print(puzzleOutput)
+
+/**
+Labelled Statements - Snakes and Ladders
+ */
+
+let finalSquare = 25
+var board = [Int](repeating: 0, count: finalSquare + 1)
+board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+
+var square = 0
+var diceRoll = 0
+
+gameLoop: while square != finalSquare {
+    diceRoll += 1
+    
+    if diceRoll == 7 { diceRoll = 1}
+    switch square + diceRoll {
+    case finalSquare:
+        // diceRoll will move us to the final square, so the game is over
+        break gameLoop
+    case let newSquare where newSquare > finalSquare:
+        continue gameLoop
+    default:
+        square += diceRoll
+        square += board[square]
+    }
+}
+print("Game over!")
+
+/**
+Early Exit - Guard let
+ */
+func greet(person: [String: String]) {
+    guard let name = person["name"] else {
+        return
+    }
+    
+    print("Hello \(name)!")
+    
+    guard let location = person["location"] else {
+        print("I hope the weather is nice near you")
+        return
+    }
+    
+    print("I hope the weather is nice in \(location)")
+}
+
+greet(person: ["name": "Sfiso"])
+// Prints "Hello Sfiso!"
+// Prints "I hope the weather is nice near you."
+greet(person: ["name": "Nontobeko", "location": "Malkerns"])
+// Prints "Hello Nontobeko!"
+// Prints "I hope the weather is nice in Malkerns."
