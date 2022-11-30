@@ -11,11 +11,12 @@ func forward(_ s1: String, s2: String) -> Bool {
     return s1 < s2
 }
 
-var reversedNames = names.sorted(by: backward)
-var forwaredNames = names.sorted(by: forward)
+var reversedNamesFunc = names.sorted(by: backward)
+var forwaredNamesFunc = names.sorted(by: forward)
 
-print(reversedNames)
-print(forwaredNames)
+print(reversedNamesFunc)
+print(forwaredNamesFunc)
 
 // Closure
-
+var reversedNAmes = names.sorted(by: {(s1: String, s2: String) -> Bool in return s1 > s2 } )
+var inferredReveresedNAmes = names.sorted(by: { s1, s2 in s1 > s2 })
