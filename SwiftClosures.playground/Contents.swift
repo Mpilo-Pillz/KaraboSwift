@@ -21,3 +21,8 @@ print(forwaredNamesFunc)
 var reversedNAmes = names.sorted(by: {(s1: String, s2: String) -> Bool in return s1 > s2 } )
 var inferredReveresedNAmes = names.sorted(by: { s1, s2 in return s1 > s2 })
 var inferredShorterReveresedNAmes = names.sorted(by: { s1, s2 in s1 > s2 })
+var evenShorterForwardedNames = names.sorted(by: {$0 < $1})
+var ridiculouslyShorterForwardedNames = names.sorted(by: >)
+
+//081180
+// i need a reference number
