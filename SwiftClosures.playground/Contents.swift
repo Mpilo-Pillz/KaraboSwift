@@ -72,3 +72,21 @@ func makeIncrementer(forIncrement amount: Int) -> () -> Int {
 let incrementByTen = makeIncrementer(forIncrement: 10)
 print(incrementByTen()) // returns 10
 print(incrementByTen()) // returns 20
+
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+
+
+// Closures as referenceTypes
+let alsoIncrementByTen = incrementByTen
+alsoIncrementByTen()
+// returns a value of 50
+
+incrementByTen()
+// returns a value of 60
+
+/**
+ The example above shows that calling alsoIncrementByTen is the same as calling incrementByTen. Because both of them refer to the same closure, they both increment and return the same running total
+ */
+
+
