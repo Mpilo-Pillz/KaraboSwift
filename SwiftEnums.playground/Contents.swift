@@ -140,3 +140,25 @@ print(CompassPointExplicit.north.rawValue)
 print(CompassPointExplicit.south.rawValue)
 print(CompassPointExplicit.east.rawValue)
 
+
+/**
+ Initializing from a Raw Value
+ If you define an enumeration with a raw-value type, the enumeration automatically receives an initializer that takes a value of the raw value’s type (as a parameter called rawValue) and returns either an enumeration case or nil. You can use this initializer to try to create a new instance of the enumeration.
+
+ This example identifies Uranus from its raw value of 7:
+ */
+let possiblePlanet = PlanetImplicit(rawValue: 7)
+// possiblePlanet is of type Planet? and equals Planet.uranus
+
+let positionToFind = 11
+if let somePlanet = PlanetImplicit(rawValue: positionToFind) {
+    switch somePlanet {
+    case .earth:
+        print("Mostly harmless")
+    default:
+        print("Not a safe place for humans")
+    }
+} else {
+    print("There isn't a planet at position \(positionToFind)")
+}
+// Prints "There isn't a planet at position 11"
