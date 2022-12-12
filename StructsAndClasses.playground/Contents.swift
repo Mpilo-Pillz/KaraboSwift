@@ -50,5 +50,22 @@ print("cinema is now \(cinema.width) pixels wide")
 print("hd is still \(hd.width) pixels wide")
 // Prints "hd is still 1920 pixels wide"
 
+let refereceVideoMode = someVideoMode
+print("referenceVideo Mode Before:\(refereceVideoMode.frameRate)")
+refereceVideoMode.frameRate = 120.0
+print("referenceVideo Mode After:\(refereceVideoMode.frameRate)")
+print("Oh no referenceVideo Mode After:\(someVideoMode.frameRate)")
+print("FrameRateAfterFor some  ViewMode \(someOtherVideoNowMessedUpByReference.frameRate)")
 
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+let alsoTeenEighty = tenEighty
+alsoTeenEighty.frameRate = 30.0
+
+print("The frameRate property of tenEighty is now \(tenEighty.frameRate)")
+print("The frameRate property of alsoTeenEighty is now \(alsoTeenEighty.frameRate)")
 
