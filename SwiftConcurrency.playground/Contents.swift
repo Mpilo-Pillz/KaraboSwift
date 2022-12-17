@@ -14,6 +14,10 @@ func show(photo: String) {
 //    }
 //}
 
+func downloadPhoto(named: String) -> [String] {
+    return ["\(name) dowloaded"]
+}
+
 func listPhotos(inGallery name: String) async -> [String] {
     let result = ["some value that comes form a newtwork call"];
     return result
@@ -29,3 +33,13 @@ func listPhotos(inGallery name: String) async throws -> [String] {
     try await Task.sleep(until: .now + .seconds(2), clock: .continuous)
     return ["IMG001", "IMG99", "IMG0404"]
 }
+
+// NOT PARALELL
+let firstPhoto = await downloadPhoto(named: photoNames[0])
+let secondPhoto = await downloadPhoto(named: photoNames[1])
+let thirdPhoto = await downloadPhoto(named: photoNames[2])
+
+let photos = [firstPhoto, secondPhoto, thirdPhoto]
+show(photo: photos)
+
+// Paralell
