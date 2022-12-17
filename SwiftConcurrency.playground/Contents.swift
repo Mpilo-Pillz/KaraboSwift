@@ -43,3 +43,9 @@ let photos = [firstPhoto, secondPhoto, thirdPhoto]
 show(photo: photos)
 
 // Paralell
+async let firstPhoto = downloadPhoto(named: photoNames[0])
+async let secondPhoto = downloadPhoto(named: photoNames[1])
+async let thirdPhoto = downloadPhoto(named: photoNames[2])
+
+let photos = await [firstPhoto, secondPhoto, thirdPhoto]
+show(photo: photos)
