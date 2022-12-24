@@ -84,3 +84,21 @@ print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
  Property Observers
 
  Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.*/
+
+/**
+ You can add property observers in the following places:
+
+ * Stored properties that you define
+
+ * Stored properties that you inherit
+
+ * Computed properties that you inherit
+ */
+
+/**
+ You have the option to define either or both of these observers on a property:
+
+ * willSet is called just before the value is stored.
+
+ * didSet is called immediately after the new value is stored.
+ */
