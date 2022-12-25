@@ -102,3 +102,18 @@ print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
 
  * didSet is called immediately after the new value is stored.
  */
+
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) {
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+
