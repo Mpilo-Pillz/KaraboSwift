@@ -45,7 +45,7 @@ class DataManager {
 
 let manager = DataManager()
 manager.data.append("Some data")
-manager.data?.append("Some more Data")
+//manager.data?.append("Some more Data")
 
 /**
  Computed Properties
@@ -116,4 +116,8 @@ class StepCounter {
         }
     }
 }
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+// About to set totalSteps to 200
+// Added 200 steps
 
