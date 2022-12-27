@@ -10,8 +10,11 @@ var numberOfSlicesComputedGetter: Int {
     return pizzaInInches - 4
 }
 
-
+func ifComputedPropertiesWerenotAvailabe() -> Int {
+    return pizzaInInches - 4
+}
 
 let a = numberOfSlicesComputedGetter * 2
+let b = ifComputedPropertiesWerenotAvailabe() * 2
 
 print(numberOfSlices)
