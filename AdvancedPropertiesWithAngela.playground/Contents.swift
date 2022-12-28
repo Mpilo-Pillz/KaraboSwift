@@ -1,6 +1,19 @@
 import Foundation
 
-let pizzaInInches: Int = 16
+var pizzaInInches: Int = 16 {
+    willSet {
+        print("if you wanted to access the The OLD Value: \(pizzaInInches)")
+        print("The size before was \(newValue)")
+    }
+    didSet {
+        if pizzaInInches >= 18 {
+            print("Invalid Size specified, pizza in inches set to 18")
+            pizzaInInches = 18
+        }
+    }
+}
+pizzaInInches = 28
+
 var numberOfPeople: Int = 12
 let slicePerPerson: Int = 4
 
@@ -24,7 +37,20 @@ var numberOfPizza: Int {
 numberOfPizza = 4
 print("We need \(numberOfPizza) pizzas")
 print("Based on the number of pizzas left, We can invite \(numberOfPeople) people")
-//
+
+
+
+//var pizzaInInches: Int = 16 {
+//    willSet {
+//        print("if you wanted to access the The OLD Value: \(pizzaInInches)")
+//        print("The size before was \(newValue)")
+//    }
+//    didSet {
+//        print("The size after was \(oldValue)")
+//        print("if you wanted to access the The NEW Value: \(pizzaInInches)")
+//    }
+//}
+//let pizzaInInches: Int = 16
 //var numberOfSlicesStored: Int = 6
 //
 //// Cannot infer data type
@@ -54,3 +80,5 @@ print("Based on the number of pizzas left, We can invite \(numberOfPeople) peopl
 //
 //print(numberOfSlices)
 //numberOfSlices = 20 // with out a setter this will thorw an error
+
+
