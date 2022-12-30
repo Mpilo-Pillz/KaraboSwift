@@ -5,11 +5,15 @@ import UIKit
 
 var width: Float = 1.5
 var height: Float = 2.3
-var areaOneBucketCovers: Float = 1.5
 
-var bucketsOfPaint: Float  {
+
+var bucketsOfPaint: Int  {
     get {
-        return (height * width) / areaOneBucketCovers
+        let area = height * width
+        let areaCoveredPerBucket: Float = 1.5
+        let numberOfBuckets = area / areaCoveredPerBucket
+        let roundedBuckets = ceil(numberOfBuckets)
+        return  Int(roundedBuckets)
     }
     
 }
