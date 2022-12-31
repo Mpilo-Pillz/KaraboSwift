@@ -32,3 +32,19 @@ struct Person: FullyNamed {
 }
 
 let mpi = Person(fullName: "Mpilo Pillz")
+
+class Starship: FullyNamed {
+    var prefix: String?
+    var name: String
+    
+    init(name: String, prefix: String? = nil) {
+        self.name = name
+        self.prefix = prefix
+    }
+    
+    var fullName: String {
+        return (prefix != null ? prefix! + " " : "") + name
+    }
+}
+
+var nc101 = Starship(name: "Enterprise", prefix: "ZA")
