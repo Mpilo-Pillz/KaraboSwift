@@ -13,3 +13,12 @@ If a class has a superclass, list the superclass name before any protocols it ad
 //class SomeClass: SomeSuperclass, FirstProtocol, AnotherProtocol {
 //    // class definition goes here
 //}
+
+protocol SomeProtocol {
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable: Int { get }
+}
+
+protocol AnotherProtocol {
+    static var someTypeProperty: Int { get set }
+}
