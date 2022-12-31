@@ -22,3 +22,13 @@ protocol SomeProtocol {
 protocol AnotherProtocol {
     static var someTypeProperty: Int { get set }
 }
+
+protocol FullyNamed {
+    var fullName: String { get }
+}
+
+struct Person: FullyNamed {
+    var fullName: String
+}
+
+let mpi = Person(fullName: "Mpilo Pillz")
