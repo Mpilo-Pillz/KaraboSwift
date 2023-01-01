@@ -43,7 +43,7 @@ class Starship: FullyNamed {
     }
     
     var fullName: String {
-        return (prefix != null ? prefix! + " " : "") + name
+        return (prefix != nil ? prefix! + " " : "") + name
     }
 }
 
