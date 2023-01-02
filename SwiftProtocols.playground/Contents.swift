@@ -95,3 +95,30 @@ enum OnOffSwitch: Togglable {
 }
 var lightSwitch = OnOffSwitch.off
 lightSwitch.toggle()
+
+/**
+ Initializer Requirements
+ */
+protocol SomeProtocol {
+    init(someParameter: Int)
+}
+
+class SomeClass: SomeProtocol {
+    required init(someParameter: Int) {
+        
+    }
+}
+
+protocol SomeOtherProtocol {
+    init()
+}
+
+class someSuperClass {
+    init() {
+        
+    }
+}
+
+class someSubClass: SomeSuperClass, SomeOtherProtocol {
+    required override init()
+}
