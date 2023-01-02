@@ -73,3 +73,25 @@ print("Here's a random number: \(generator.random())")
 // Prints "Here's a random number: 0.3746499199817101"
 print("And another one: \(generator.random())")
 // Prints "And another one: 0.729023776863283"
+
+/**
+ Mutating Method Requirements
+ */
+
+protocol Togglable {
+    mutating func toggle()
+}
+
+enum OnOffSwitch: Togglable {
+    case off, on
+    mutating func toggle() {
+        switch self {
+        case .off:
+            self = .on
+        case .on:
+            self = .off
+        }
+    }
+}
+var lightSwitch = OnOffSwitch.off
+lightSwitch.toggle()
