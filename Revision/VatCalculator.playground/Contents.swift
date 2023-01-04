@@ -16,5 +16,7 @@ func getTotal(isVatRegistered: Bool) -> ( Double, Int) -> Double {
 }
 
 let totalWithoutVat = getTotal(isVatRegistered: false)
-print("The total without VAT is R\(totalWithoutVat(800, 1760))")
+print("The total without VAT is R\(totalWithoutVat(800, 160))")
 
+let totalWithVat = getTotal(isVatRegistered: true)
+print("The total with VAT is R\(totalWithVat(800, 160))")
