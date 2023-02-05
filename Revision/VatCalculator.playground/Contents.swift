@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 func getTotal(isVatRegistered: Bool) -> ( Double, Int) -> Double {
     func totalWithVat(price: Double, quantity: Int) -> Double {
