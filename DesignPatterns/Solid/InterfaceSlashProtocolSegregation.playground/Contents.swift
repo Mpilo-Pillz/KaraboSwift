@@ -19,12 +19,29 @@ class Car: Vehicle {
     }
 }
 
+class ElectricCar: Vehicle {
+    let brand: String
+    
+    override func drive() {
+        print("whiiiiiiiiiiiew")
+    }
+    
+     init(brand: String) {
+        self.brand = brand
+        super.init()
+    }
+}
+
 let vehicle = Vehicle();
 vehicle.drive()
 vehicle.honk()
 
 let lexusSedan = Car(brand: "Lexus LS")
 lexusSedan.drive();
-lexusSedan.honk()
+lexusSedan.honk();
+
+let bmwElectric = ElectricCar(brand: "BMW i7")
+bmwElectric.drive()
+bmwElectric.honk()
 
 
