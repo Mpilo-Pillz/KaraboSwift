@@ -21,6 +21,7 @@ class Car: Vehicle {
 
 class ElectricCar: Vehicle {
     let brand: String
+    let selfCharging: Bool = false
     
     override func drive() {
         print("whiiiiiiiiiiiew")
