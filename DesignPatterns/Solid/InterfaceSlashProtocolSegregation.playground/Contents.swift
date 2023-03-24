@@ -4,6 +4,10 @@ protocol CanTopUpEnergy {
     func fillUp() -> String
 }
 
+protocol OffRoadCapable {
+    func toggleDiffLock() -> String
+}
+
 class Vehicle {
     func drive() -> Void {
         print("Vrooommmmm")
@@ -48,6 +52,11 @@ class ElectricCar: Vehicle, CanTopUpEnergy {
 }
 
 
+
+func fillingUp(vehicle: CanTopUpEnergy) {
+    print(vehicle.fillUp())
+}
+
 let vehicle = Vehicle();
 vehicle.drive()
 vehicle.honk()
@@ -55,9 +64,11 @@ vehicle.honk()
 let lexusSedan = Car(brand: "Lexus LS")
 lexusSedan.drive();
 lexusSedan.honk();
+fillingUp(vehicle: lexusSedan)
 
 let bmwElectric = ElectricCar(brand: "BMW i7")
 bmwElectric.drive()
 bmwElectric.honk()
+fillingUp(vehicle: bmwElectric)
 
 
