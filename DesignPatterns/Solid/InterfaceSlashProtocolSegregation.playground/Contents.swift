@@ -51,10 +51,22 @@ class ElectricCar: Vehicle, CanTopUpEnergy {
     }
 }
 
-
+class ElectricSUV: ElectricCar, OffRoadCapable {
+    func toggleDiffLock() -> String {
+        return "Difflock actvated can toggle 4X4 hi and lo"
+    }
+    
+    override init(brand: String) {
+         super.init(brand: brand)
+    }
+}
 
 func fillingUp(vehicle: CanTopUpEnergy) {
     print(vehicle.fillUp())
+}
+
+func goesOffRoad(vehicle: OffRoadCapable) {
+    print(vehicle.toggleDiffLock())
 }
 
 let vehicle = Vehicle();
@@ -70,5 +82,13 @@ let bmwElectric = ElectricCar(brand: "BMW i7")
 bmwElectric.drive()
 bmwElectric.honk()
 fillingUp(vehicle: bmwElectric)
+
+let bmwX = ElectricSUV(brand: "BMW iX3")
+bmwX.toggleDiffLock()
+bmwX.honk()
+bmwX.drive()
+goesOffRoad(vehicle: bmwX)
+//goesOffRoad(vehicle: bmwElectric) //error does is not off road capable
+//goesOffRoad(vehicle: lexusSedan) //error does is not off road capable
 
 
