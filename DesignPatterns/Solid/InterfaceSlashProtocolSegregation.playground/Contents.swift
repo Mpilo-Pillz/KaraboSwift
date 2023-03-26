@@ -1,5 +1,9 @@
 import Foundation
 
+protocol CanTopUpEnergy {
+    func fillUp() -> String
+}
+
 class Vehicle {
     func drive() -> Void {
         print("Vrooommmmm")
@@ -10,16 +14,22 @@ class Vehicle {
     }
 }
 
-class Car: Vehicle {
+class Car: Vehicle, CanTopUpEnergy {
+    func fillUp() -> String {
+        return "Goes to the filling station and pours petrol"
+    }
+    
     let brand: String
     
      init(brand: String) {
         self.brand = brand
         super.init()
     }
+    
+    
 }
 
-class ElectricCar: Vehicle {
+class ElectricCar: Vehicle, CanTopUpEnergy {
     let brand: String
     let selfCharging: Bool = false
     
@@ -31,7 +41,12 @@ class ElectricCar: Vehicle {
         self.brand = brand
         super.init()
     }
+    
+    func fillUp() -> String {
+        return "Goes to Charging Station gets plugged in and batteries charge"
+    }
 }
+
 
 let vehicle = Vehicle();
 vehicle.drive()
