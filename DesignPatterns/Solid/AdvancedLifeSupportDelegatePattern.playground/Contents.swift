@@ -63,7 +63,3 @@ let dumisani = Doctor(handler: emihle)
 
 emihle.assessSituation()
 emihle.medicalEmergency()
-
-let sae = iOSDriver()
-
-mobiquity.sendkey(filed, value)
