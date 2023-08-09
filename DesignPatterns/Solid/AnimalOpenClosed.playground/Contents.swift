@@ -33,9 +33,9 @@ cheetah.getSpeed()
 
 
 class SpeedRate {
-let getSpeed: () -> Int
-    init(getSpeed: @escaping () -> Int) {
-        self.getSpeed = getSpeed
+
+    func getSpeed() -> Int {
+        return self.getSpeed()
     }
 }
 
@@ -54,19 +54,20 @@ class Animal {
         self.speedRate = speedRate
     }
     
-    func getSpeed() -> String {
+    func getSpeed() -> Int {
         return speedRate.getSpeed()
     }
 }
 
-class LeopardSpeedRate: Animal, SpeedRate {
+class LeopardSpeedRate: Animal {
+    
     override func getSpeed() -> Int {
         return 100
     }
 }
 
 class TigerSpeedRate: SpeedRate {
-    override func getSpeed() -> Int {
+    override  func getSpeed() -> Int {
         return 70
     }
 }
@@ -77,7 +78,7 @@ class Buffalo: SpeedRate {
     }
 }
 
-let buffalo = Animal(name: "Baffalo", age: 7, speedRate: Buffalo(getSpeed: <#() -> String#>))
-
+let buffalo = Animal(name: "Baffalo", age: 7, speedRate: Buffalo())
+print(buffalo.getSpeed())
 
 //TODO: read https://www.swiftbysundell.com/articles/composing-types-in-swift/
