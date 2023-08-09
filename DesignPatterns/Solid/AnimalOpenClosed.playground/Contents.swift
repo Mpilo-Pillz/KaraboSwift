@@ -78,7 +78,15 @@ class Buffalo: SpeedRate {
     }
 }
 
+class Sheep: SpeedRate {
+    override func getSpeed() -> Int {
+        return 60
+    }
+}
+
 let buffalo = Animal(name: "Baffalo", age: 7, speedRate: Buffalo())
+let sheep = Animal(name: "Sheep", age: 8, speedRate: Sheep())
 print(buffalo.getSpeed())
+print(sheep.getSpeed())
 
 //TODO: read https://www.swiftbysundell.com/articles/composing-types-in-swift/
