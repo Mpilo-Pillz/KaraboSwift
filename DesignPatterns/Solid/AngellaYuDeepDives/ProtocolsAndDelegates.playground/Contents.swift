@@ -32,8 +32,24 @@ class FourteenInch: LaptopDelegate {
     }
 }
 
+struct ThirteenInch: LaptopDelegate {
+    let name: String
+    
+    init(name: String, handler: UserSlashHandler) {
+        self.name = name
+        handler.delegate = self
+    }
+    
+    func useComputer() {
+        print("Used to learn PRogramming Languages, Design Patters etc")
+    }
+}
+
 let mpilo = UserSlashHandler(name: "Mpilz")
 let blueBook = FourteenInch(name: "Blue Laptop", handler: mpilo)
 
+let myfirstBook = ThirteenInch(name: "My first MacBook", handler: mpilo)
+
+//mpilo.useLaptop()
 mpilo.useLaptop()
 
