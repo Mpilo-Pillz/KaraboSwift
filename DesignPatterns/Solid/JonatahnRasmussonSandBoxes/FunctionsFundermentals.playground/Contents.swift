@@ -35,7 +35,9 @@ struct Calculator2 {
 
 
 // Challenge
-func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+//func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+typealias longComplicatedExpression = (Int) -> Bool
+func hasAnyMatches(list: [Int], condition: longComplicatedExpression) -> Bool {
     for item in list {
         if condition(item) {
             return true
