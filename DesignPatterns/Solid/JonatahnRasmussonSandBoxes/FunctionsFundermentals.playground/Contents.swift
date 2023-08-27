@@ -32,3 +32,32 @@ struct Calculator2 {
     typealias expression = (Int, Int) -> Int
     var matchFunction: expression = Math().addTwoInts
 }
+
+
+// Challenge
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+
+// My answer
+func betweenOneAndTen(number: Int) -> Bool {
+    return number > 0 && number < 11
+}
+
+var number = [20, 19, 7, 12]
+hasAnyMatches(list: number, condition: lessThanTen)
+hasAnyMatches(list: number, condition: betweenOneAndTen)
+
+hasAnyMatches(list: [2,3,4], condition: betweenOneAndTen) // true
+hasAnyMatches(list: [0, 11], condition: betweenOneAndTen) // false
+hasAnyMatches(list: [1, 11], condition: betweenOneAndTen) // true
+hasAnyMatches(list: [0, 10], condition: betweenOneAndTen) // true
