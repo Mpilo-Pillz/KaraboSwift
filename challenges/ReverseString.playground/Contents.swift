@@ -6,6 +6,7 @@ func reverseString(str: String) {
     // create array to be revered
 let stringAsArray = Array(str)
     print(stringAsArray)
+    print(Array(stringAsArray.reversed()))
     // create empty array to put in reversed strings
 let emptyArrayToBeString = [String]()
     // loop from the back of the array and add to empty array
@@ -13,3 +14,4 @@ let emptyArrayToBeString = [String]()
 }
 
 reverseString(str: "Mpilo")
+print(String(greeting.reversed()))
