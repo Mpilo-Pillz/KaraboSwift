@@ -1,6 +1,17 @@
 import UIKit
 
 func pyramid(numOfLevels: Int) {
+    let midpoint = floor((numOfLevels + 1) / 2)
+    
+    for row in 0..<(2 * numOfLevels - 1) {
+        var step = ""
+        
+        if midpoint - row <= column && midpoint + row >= column {
+        step += "#"
+    } else {
+        step += " "
+    }
+    }
     
 }
 
@@ -22,5 +33,5 @@ func step(numOfLevels: Int) {
 }
 
 step(numOfLevels: 4)
-
+pyramid(numOfLevels: 4)
 
